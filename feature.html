@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <style>
+    .ImageContainer {
+      display: flex;
+      justify-content: space-around;
+    }
+    @media {
+      img {
+        max-width: 360px;
+        width: 100%;
+        border: 3px solid silver;
+        border-radius: 8px;
+        box-shadow: 0px, 4px, 4px rgba(0, 0, 0, 0.5);
+        transition: box-shadow 0.5s;
+      }
+    }
+    img:hover {
+      box-shadow: 0px, 8px, 8px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+  <body>
+    <h1>Homework. Random image app</h1>
+    <div class="buttonContainer">
+      <div class="first">
+        <button>Remove</button>
+      </div>
+      <div class="reload">
+        <button>New images</button>
+      </div>
+      <div class="last">
+        <button>Add</button>
+      </div>
+    </div>
+    <div class="ImageContainer">
+      <div class="overlay">
+        <img src="https://picsum.photos/300/300?random=1" class="randomImage" />
+      </div>
+      <div class="overlay">
+        <img src="https://picsum.photos/300/300?random=2" class="randomImage" />
+      </div>
+    </div>
+    <ul>
+      <li>Easy</li>
+      <li>Simple</li>
+    </ul>
+    <script>
+      function reload() {
+        const images = document.querySelectorAll("img");
+        images.forEach((image) => {
+          image.src = "https://picsum.photos/300/300?random=" + Math.random();
+        });
+      }
+
+      const reloadButton = document.querySelector(".reload");
+      reloadButton.onclick = reload;
+
+      function togglePreview(event) {
+        event.target.parentNode.classList.toggle("active");
+        consol.log(event.target.parentNode);
+      }
+      const images = document.querySelectorAll("img");
+      images.forEach((image) => {
+        image.onclick = togglePreview;
+      });
+    </script>
+  </body>
+  <p><strong>Random image app by Svetlana Litovko</strong></p>
+</html>
