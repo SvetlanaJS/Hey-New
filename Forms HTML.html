@@ -5,11 +5,110 @@
     <meta charset="UTF-8" />
   </head>
 
+<style>
+  input {
+display: block;
+margin: 5px 5px 10px 5px; 
+  }
+</style>
+
   <body>
- <form method="post" action="/login"></form>
+
+ <form method="post" action="/login">
+
+ <label>
+  <h2>Войти в систему</h2>
+  <span>Введите логин:</span>
+ <input 
+ type="email" 
+ name="login" 
+ placeholder="Ваш email" 
+ minlength="5"
+ />
+</label>
+
+<label>
+  <span>Введите пароль:</span>
+ <input 
+ type="password" 
+ name="password" 
+ placeholder="Введите пароль" 
+ />
+</label>
 
  <button type ="submit">
     Войти
  </button>
+
+ <label>
+  <h2>Зарегистрироваться</h2>
+  <span>Введите ваш email</span>
+ <input 
+ type="email" 
+ name="login" 
+ placeholder="Ваш email" 
+ minlength="5"
+ required 
+ />
+</label>
+
+<label>
+  <span>Введите ваш login</span>
+ <input 
+ type="login" 
+ name="login" 
+ placeholder="Ваш login" 
+ minlength="5"
+ required 
+ />
+</label>
+
+<label>
+  <span>Дата вашего рождения</span>
+ <input 
+ type="date" 
+ name="date" 
+ placeholder="Дата">
+</label>
+
+<label>
+  <span>Введите пароль:</span>
+ <input 
+ type="password" 
+ name="password" 
+ placeholder="Введите пароль" 
+ minlength="5"
+ required 
+ />
+
+ <label>
+  <span>Повторите пароль:</span>
+ <input 
+ type="password" 
+ name="password"
+ placeholder="Повторите пароль" 
+ minlength="5"
+ required 
+ />
+</label>
+</label>
+
+
+<label>
+  <span>Укажите Вашу страну</span>
+ <select name="select-one-of" style="width:200px;">
+<option>Россия</option>
+<option>Украина</option>
+<option>Белорусия</option>
+<option>Казахстан </option>
+<option>Польша</option>
+ </select>
+</label>
+
+<button type ="submit">
+  Зарегистрироваться
+</button>
+
+</form>
   </body>
 </html>
